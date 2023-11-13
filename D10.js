@@ -495,8 +495,12 @@ console.log(searchAndDivide("Lords"));
 */
 
 const removeIndex = (n) =>{
+    let newMovies = movies.filter((_,index)=> index !== n)
+    return newMovies
     
 }
+
+console.log(removeIndex(0))
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -504,29 +508,89 @@ const removeIndex = (n) =>{
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+function container (){
+  let container = document.getElementById("container")
+  return container;
+}
+
+console.log(container())
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+function td (){
+  let allTd = document.querySelectorAll("td")
+  return allTd;
+}
+
+console.log(td());
+
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
+function stampaTd () {
+  let allTd = document.querySelectorAll("td")
+  for (const td of allTd) {
+    console.log(td.textContent)
+    
+  }
+}
+
+stampaTd();
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+function backgroundLink () {
+  let links = document.querySelectorAll("a")
+  for (const link of links) {
+    link.style.backgroundColor = "red"
+    
+  }
+}
+backgroundLink();
+
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function nuovoElemento () {
+  let baselist = document.getElementById("myList");
+  let newList = document.createElement("li");
+  newList.textContent = "Capuccino";
+  baselist.appendChild(newList)
+}
+
+nuovoElemento();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+function svuotare() {
+  let baselist = document.getElementById("myList"); 
+  do{ baselist.removeChild(baselist.firstChild)
+
+  } while (baselist.firstChild)
+}
+
+svuotare();
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+function test () {
+  let allTr = document.querySelectorAll("tr");
+  for (const tr of allTr) {
+      tr.className = "test"
+  }
+}
+
+test();
 
 // [EXTRA] JS Avanzato
 
